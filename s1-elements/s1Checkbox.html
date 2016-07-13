@@ -1,17 +1,30 @@
-<polymer-element name="s1-checkbox" attributes="checkboxlabel,checkboxchecked" noscript>
+<dom-module id="s1-checkbox">
+    <template>
+        <div class="mbm db">
+            <input class="checkbox checkbox--default checkbox--states-1 brm mrs bg-secondary-btn sq-22 a-mid dib"
+                   type="checkbox"
+                   id="filter-1" checked="{{checkboxchecked}}">
+            <label class="f4 text-color-1" for="filter-1">
+                {{checkboxlabel}}
+            </label>
+        </div>
+    </template>
+    <script>
 
-  <template>
 
-<div class="mbm db">
-  <input
-    class="checkbox checkbox--default checkbox--states-1 brm mrs bg-secondary-btn sq-22 a-mid dib"
-    type="checkbox"
-    id="filter-1">
-  <label class="f4 text-color-1" for="filter-1">
-    {{checkboxlabel || 'Filter 1'}}
-  </label>
-</div>
+        Polymer({
+            is: "s1-checkbox",
+            properties: {
+                checkboxlabel: {
+                    type: String,
+                    reflectToAttribute: true
+                },
+                checkboxchecked: {
+                    type: String,
+                    reflectToAttribute: true
+                }
+            }
+        });
 
-  </template>
-
-</polymer-element>
+    </script>
+</dom-module>
